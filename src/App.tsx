@@ -1,7 +1,12 @@
+import { ThemeProvider } from './contexts/ThemeContext';
+import { Home } from './pages/home';
+
 function App() {
   return (
     <>
-      <h1>Setup</h1>
+      <ThemeProvider>
+        <Home />
+      </ThemeProvider>
     </>
   );
 }
