@@ -1,5 +1,6 @@
-import { Moon, Sun } from 'lucide-react';
+import { IoSunny } from 'react-icons/io5';
 import { useTheme } from '../../contexts/ThemeContext';
+import { FaMoon } from 'react-icons/fa';
 
 export const ThemeButton = () => {
   const { theme, setTheme } = useTheme();
@@ -16,7 +17,11 @@ export const ThemeButton = () => {
       onClick={toggleTheme}
       className='flex justify-center items-center cursor-pointer'
     >
-      {theme === 'dark' ? <Sun /> : <Moon />}
+      {theme === 'dark' ? (
+        <IoSunny className='text-lg' />
+      ) : (
+        <FaMoon className='text-lg' />
+      )}
     </button>
   );
 };

@@ -1,0 +1,37 @@
+import { FaJava } from 'react-icons/fa';
+import {
+  SiCss,
+  SiDocker,
+  SiGit,
+  SiJavascript,
+  SiLinux,
+  SiMysql,
+  SiOllama,
+  SiPodman,
+  SiPostgresql,
+  SiPostman,
+  SiReact,
+  SiSpring,
+  SiSpringboot,
+  SiTailwindcss,
+  SiTypescript,
+} from 'react-icons/si';
+
+export const TECH_BADGE_LIST = [
+  { icon: <FaJava />, text: 'Java' },
+  { icon: <SiSpringboot />, text: 'Spring Boot' },
+  { icon: <SiSpring />, text: 'Spring AI' },
+  { icon: <SiOllama />, text: 'Ollama' },
+  { icon: <SiMysql />, text: 'MySQL' },
+  { icon: <SiPostgresql />, text: 'PostgreSQL' },
+  { icon: <SiDocker />, text: 'Docker' },
+  { icon: <SiPodman />, text: 'Podman' },
+  { icon: <SiLinux />, text: 'Linux' },
+  { icon: <SiPostman />, text: 'Postman' },
+  { icon: <SiGit />, text: 'Git' },
+  { icon: <SiJavascript />, text: 'JavaScript' },
+  { icon: <SiTypescript />, text: 'TypeScript' },
+  { icon: <SiCss />, text: 'CSS3' },
+  { icon: <SiTailwindcss />, text: 'Tailwind CSS' },
+  { icon: <SiReact />, text: 'React' },
+];
