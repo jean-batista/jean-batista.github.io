@@ -1,15 +1,40 @@
 import { FaGithub } from 'react-icons/fa';
 import { LuFolderGit2 } from 'react-icons/lu';
 import { Header } from '../../components/Header';
+import { ProjectCard } from '../../components/ProjectCard';
 import { TechBadge } from '../../components/TechBadge';
 import { TECH_BADGE_LIST } from '../../constants/badges';
 import { GITHUB_URL } from '../../constants/links';
 
 export const Home = () => {
+  const projectsMock = [
+    {
+      name: 'Sentinel',
+      descrition:
+        'Sistema desenvolvido para coletar telemetria de hardware e oferecer serviços de chat integrados com inteligência artificial privada. Foco em processamento assíncrono e segurança dos dados.',
+      topics: ['Spring Boot', 'Spring AI', 'PostgreSQL'],
+      url: 'https://github.com/jean-batista/sentinel-chatbot',
+    },
+    {
+      name: 'FuewFlow API',
+      descrition:
+        'API RESTful para gerenciamento de fluxo de combustível. Totalmente conteinerizada e implementada com pipeline de deploy automatizado via GitHub Actions na cloud. ',
+      topics: ['Java', 'Docker', 'CI/CD'],
+      url: 'https://github.com/jean-batista/fuel-flow-api',
+    },
+    {
+      name: 'Flight Radar',
+      descrition:
+        'Projeto acadêmico de monitoramento de voos. Consumo de APIs externas e exibição de dados em tempo real no front-end, focado em lidar com alto volume de requisições. ',
+      topics: ['React', 'Rest API', 'Java'],
+      url: 'https://github.com/jean-batista/flight-radar',
+    },
+  ];
+
   return (
     <>
       <Header />
-      <main className='bg-white dark:bg-gray-900 pt-16'>
+      <main className='bg-white dark:bg-gray-900 pt-16 transition-colors duration-300'>
         <section
           id='sobre'
           className='max-w-5xl mx-auto px-6 py-20 md:py-32 flex flex-col items-start'
@@ -66,6 +91,31 @@ export const Home = () => {
             <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5'>
               {TECH_BADGE_LIST.map((badge, index) => (
                 <TechBadge key={index} icon={badge.icon} text={badge.text} />
+              ))}
+            </div>
+          </div>
+        </section>
+        <section
+          id='projetos'
+          className='bg-white dark:bg-gray-900 border-y border-gray-200
+          dark:border-gray-800 py-16 transition-colors duration-300'
+        >
+          <div className='max-w-5xl mx-auto px-6'>
+            <h3 className='text-2xl font-bold text-gray-900 dark:text-white mb-12 transition-colors'>
+              <span className='text-indigo-600 dark:text-indigo-400 font-mono mr-2'>
+                02.
+              </span>
+              Principais Projetos
+            </h3>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
+              {projectsMock.map((project, index) => (
+                <ProjectCard
+                  key={index}
+                  name={project.name}
+                  description={project.descrition}
+                  topics={project.topics}
+                  url={project.url}
+                />
               ))}
             </div>
           </div>
