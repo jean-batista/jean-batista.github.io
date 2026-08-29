@@ -2,34 +2,14 @@ import { FaGithub } from 'react-icons/fa';
 import { LuFolderGit2 } from 'react-icons/lu';
 import { Header } from '../../components/Header';
 import { ProjectCard } from '../../components/ProjectCard';
+import { ProjectSkeleton } from '../../components/ProjectSkeleton';
 import { TechBadge } from '../../components/TechBadge';
 import { TECH_BADGE_LIST } from '../../constants/badges';
 import { GITHUB_URL } from '../../constants/links';
+import { useGithubProjects } from '../../hooks/useGithubProjects';
 
 export const Home = () => {
-  const projectsMock = [
-    {
-      name: 'Sentinel',
-      descrition:
-        'Sistema desenvolvido para coletar telemetria de hardware e oferecer serviços de chat integrados com inteligência artificial privada. Foco em processamento assíncrono e segurança dos dados.',
-      topics: ['Spring Boot', 'Spring AI', 'PostgreSQL'],
-      url: 'https://github.com/jean-batista/sentinel-chatbot',
-    },
-    {
-      name: 'FuewFlow API',
-      descrition:
-        'API RESTful para gerenciamento de fluxo de combustível. Totalmente conteinerizada e implementada com pipeline de deploy automatizado via GitHub Actions na cloud. ',
-      topics: ['Java', 'Docker', 'CI/CD'],
-      url: 'https://github.com/jean-batista/fuel-flow-api',
-    },
-    {
-      name: 'Flight Radar',
-      descrition:
-        'Projeto acadêmico de monitoramento de voos. Consumo de APIs externas e exibição de dados em tempo real no front-end, focado em lidar com alto volume de requisições. ',
-      topics: ['React', 'Rest API', 'Java'],
-      url: 'https://github.com/jean-batista/flight-radar',
-    },
-  ];
+  const { repos, loading } = useGithubProjects();
 
   return (
     <>
@@ -108,15 +88,23 @@ export const Home = () => {
               Principais Projetos
             </h3>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
-              {projectsMock.map((project, index) => (
-                <ProjectCard
-                  key={index}
-                  name={project.name}
-                  description={project.descrition}
-                  topics={project.topics}
-                  url={project.url}
-                />
-              ))}
+              {repos && !loading
+                ? repos.map((project, index) => (
+                    <ProjectCard
+                      key={index}
+                      name={project.name}
+                      description={
+                        project.description
+                          ? project.description
+                          : 'Projeto sem descrição'
+                      }
+                      topics={project.topics}
+                      url={project.html_url}
+                    />
+                  ))
+                : Array.from({ length: 4 }).map((_, index) => (
+                    <ProjectSkeleton key={index} />
+                  ))}
             </div>
           </div>
         </section>

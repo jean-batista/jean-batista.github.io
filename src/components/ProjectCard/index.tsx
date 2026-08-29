@@ -1,4 +1,5 @@
 import { FaExternalLinkAlt } from 'react-icons/fa';
+import { formatProjectTitle, formatTopic } from '../../utils/formatters';
 
 type ProjectCardProps = {
   name: string;
@@ -27,7 +28,7 @@ export const ProjectCard = ({
           className='text-xl font-bold group-hover:text-indigo-600 
           dark:group-hover:text-indigo-400 transition-colors'
         >
-          {name}
+          {formatProjectTitle(name)}
         </h4>
         <a
           href={url}
@@ -46,7 +47,7 @@ export const ProjectCard = ({
             className='text-xs font-mono text-indigo-600 dark:text-indigo-300 bg-indigo-50 
           dark:bg-indigo-900/40 px-2 py-1 rounded transition-colors'
           >
-            {topic}
+            {formatTopic(topic)}
           </span>
         ))}
       </div>
