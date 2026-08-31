@@ -1,5 +1,6 @@
 import { FaGithub } from 'react-icons/fa';
 import { LuFolderGit2 } from 'react-icons/lu';
+import { Footer } from '../../components/Footer';
 import { Header } from '../../components/Header';
 import { ProjectCard } from '../../components/ProjectCard';
 import { ProjectSkeleton } from '../../components/ProjectSkeleton';
@@ -109,6 +110,7 @@ export const Home = () => {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 };
