@@ -48,6 +48,8 @@ export const Home = () => {
             </a>
             <a
               href={GITHUB_URL}
+              target='_blank'
+              rel='noopener noreferrer'
               className='flex justify-center items-center gap-2
             bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-6 py-2
               rouded-md font-semibold hover:bg-gray-800 dark:hover-bg-gray-200 transition-colors cursor-pointer'

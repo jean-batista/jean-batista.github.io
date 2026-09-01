@@ -32,6 +32,8 @@ export const ProjectCard = ({
         </h4>
         <a
           href={url}
+          target='_blank'
+          rel='noopener noreferrer'
           className='text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400'
         >
           <FaExternalLinkAlt />

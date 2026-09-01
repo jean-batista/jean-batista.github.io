@@ -19,6 +19,8 @@ export const Footer = () => {
         </p>
         <a
           href={EMAIL_URL}
+          target='_blank'
+          rel='noopener noreferrer'
           className='inline-block border border-indigo-500 text-indigo-400 px-8 py-4
             rounded-md font-mono hover:bg-indigo-900/30 transition-colors'
         >
