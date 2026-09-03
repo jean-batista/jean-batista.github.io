@@ -1,5 +1,5 @@
 export const TARGET_TOPICS = ['portfolio'];
-export const HIDDEN_TOPICS = ['portfolio'];
+export const HIDDEN_TOPICS = ['portfolio', 'completed', 'in-progress'];
 export const TOPIC_DICTIONARY: Record<string, string> = {
   'ci-cd': 'CI/CD',
   javascript: 'JavaScript',

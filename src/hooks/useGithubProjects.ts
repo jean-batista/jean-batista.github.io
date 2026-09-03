@@ -17,10 +17,19 @@ export function useGithubProjects() {
           repo.topics?.some(topic => TARGET_TOPICS.includes(topic)),
         );
 
-        const cleanedRepos = filteredRepos.map(repo => ({
-          ...repo,
-          topics: repo.topics?.filter(topic => !HIDDEN_TOPICS.includes(topic)),
-        }));
+        const cleanedRepos = filteredRepos.map(repo => {
+          const status = (
+            repo.topics?.includes('completed') ? 'completed' : 'in-progress'
+          ) as 'completed' | 'in-progress';
+
+          return {
+            ...repo,
+            status,
+            topics: repo.topics?.filter(
+              topic => !HIDDEN_TOPICS.includes(topic),
+            ),
+          };
+        });
 
         setRepos(cleanedRepos);
       }
