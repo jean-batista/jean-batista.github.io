@@ -18,6 +18,8 @@ export const ProjectCard = ({
   status,
   url,
 }: ProjectCardProps) => {
+  const projectTitle = formatProjectTitle(name);
+
   return (
     <article
       className='bg-white dark:bg-gray-800 p-8 rounded-lg border border-gray-200
@@ -28,25 +30,30 @@ export const ProjectCard = ({
         className='flex justify-between items-center mb-4 
         text-gray-900 dark:text-white'
       >
-        <div className='flex gap-3'>
-          <h4
-            className='text-xl font-bold group-hover:text-indigo-600 
-          dark:group-hover:text-indigo-400 transition-colors'
+        <div className='flex justify-between items-start gap-3 w-full'>
+          <div className='flex items-center gap-3 min-w-0 flex-1'>
+            <h4
+              title={projectTitle}
+              className='text-xl font-bold group-hover:text-indigo-600 
+            dark:group-hover:text-indigo-400 transition-colors truncate'
+            >
+              {projectTitle}
+            </h4>
+            <div className='shrink-0'>
+              <ProjectStausBadge status={status} />
+            </div>
+          </div>
+          <a
+            href={url}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 shrink-0 mt-1'
           >
-            {formatProjectTitle(name)}
-          </h4>
-          <ProjectStausBadge status={status} />
+            <FaExternalLinkAlt />
+          </a>
         </div>
-        <a
-          href={url}
-          target='_blank'
-          rel='noopener noreferrer'
-          className='text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400'
-        >
-          <FaExternalLinkAlt />
-        </a>
       </div>
-      <p className='text-gray-600 dark:text-gray-300 mb-6 text-sm transition-colors'>
+      <p className='text-gray-600 dark:text-gray-300 mb-6 text-sm transition-colors wrap-break-word'>
         {description}
       </p>
       <div className='flex flex-wrap gap-2 mt-auto'>
