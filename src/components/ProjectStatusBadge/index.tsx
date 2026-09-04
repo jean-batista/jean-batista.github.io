@@ -5,7 +5,7 @@ type ProjectStausBadge = {
   status: ProjectStatus;
 };
 
-export const ProjectStausBadge = ({ status }: ProjectStausBadge) => {
+export const ProjectStatusBadge = ({ status }: ProjectStausBadge) => {
   const projectStatus =
     status === 'completed' ? 'Concluído' : 'Em desenvolvimento';
 

@@ -1,6 +1,6 @@
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import { formatProjectTitle, formatTopic } from '../../utils/formatters';
-import { ProjectStausBadge } from '../ProjectStatusBadge';
+import { ProjectStatusBadge } from '../ProjectStatusBadge';
 import type { ProjectStatus } from '../../types/ProjectStatus';
 
 type ProjectCardProps = {
@@ -40,7 +40,7 @@ export const ProjectCard = ({
               {projectTitle}
             </h4>
             <div className='shrink-0'>
-              <ProjectStausBadge status={status} />
+              <ProjectStatusBadge status={status} />
             </div>
           </div>
           <a
