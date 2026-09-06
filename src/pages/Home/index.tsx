@@ -94,6 +94,7 @@ export const Home = () => {
               {repos && !loading
                 ? repos.map((project, index) => (
                     <ProjectCard
+                      status={project.status}
                       key={index}
                       name={project.name}
                       description={
