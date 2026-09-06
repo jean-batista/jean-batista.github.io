@@ -24,7 +24,7 @@ export const ProjectCard = ({
     <article
       className='bg-white dark:bg-gray-800 p-8 rounded-lg border border-gray-200
       dark:border-gray-700 shadow-sm hover-shadow-md dark:hover:shadow-indigo-900/20
-      transition-all relative group'
+      transition-all relative group flex flex-col h-full'
     >
       <div
         className='flex justify-between items-center mb-4 
